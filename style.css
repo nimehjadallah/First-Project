@@ -1,0 +1,15 @@
+
+
+body {
+  height: 100%;
+  background-image: url("images/sunrisefield.jpg");
+  background-size: 100%;
+  background-position: center center; 
+}
+
+.fontStyle {
+  /* background-color: rgb(236, 141, 63); */
+  font-family: "Viga", sans-serif;
+}
+
+
