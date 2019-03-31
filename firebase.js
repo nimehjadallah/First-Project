@@ -16,64 +16,43 @@ $(document).ready(function(){
 
       $("#submit").on("click", function(event){
         event.preventDefault();
-        var userName = $("#userName").val().trim();
+        var userName = $("#nameInput").val().trim();
         console.log(userName);
-        var cityState = $("#areaInput").val().trim();
-        console.log(cityState);
+        var city = $("#inputCity").val().trim();
+        console.log(city);
+        var state = $("#inputState").val().trim();
+        console.log(state);
+
+
+        // var cityState = $("#areaInput").val().trim();
+        // console.log(cityState);
     //   var month = moment($("#monthInput").val().trim(), "MM/DD/YYYY").format("X");
     
     var newUser = {
         name: userName,
-        cityState: cityState,
+        city: city,
+        state: state
          
     };
      database.ref().push(newUser);
     });
+$("#nameInput").val("");
+$("#inputCity").val("");
+$("#inputState").val("");
 
       
     database.ref().on("value", function(snapshot){
-        var name = snapshot.val().name;
-        $("#userName").text(name);
+        var userName = snapshot.val().name;
+        $("#nameInput").text(userName);
 
-        var citystate = snapshot.val().cityState;
-        $("#areaInput").text(citystate);
+        var city = snapshot.val().city;
+        $("#inputCity").text(city);
+
+        var state = snapshot.val().state;
+        $("#inputState").text(state);
     });
 
 
 });
 
 
-
-
-
-
-// //   var name="";
-    // //   var cityState="";
-    // //   var month="";
-
-    //   $(".form-field").on("keyup", function(){
-    //       var userName = $("#name").val().trim();
-    //       var cityState = $("#areaInput").val().trim();
-    //       var month = $("#monthInput").val().trim();
-
-    //       sessionStorage.setItem("userName", userName);
-    //       sessionStorage.setItem("City/State", cityState);
-    //       sessionStorage.setItem("month of birth", month);
-    //     });
-
-    //     $("#name").val(sessionStorage.getItem("userName"));
-    //     $("#areaInput").val(sessionStorage.getItem("City/State"));
-    //     $("#monthInput").val(sessionStorage.getItem("month of birth"));
-
-    //     $("#submit").on("click", function(event){
-    //         event.preventDefault();
-    //         if ($("#name").val().trim() === "" ||
-    //         $("#areaInput").val().trim() === "" ||
-    //         $("#monthInput").val().trim() === "" ) {
-
-    //             alert("Please fill in the username details to continue");
-    //         } else {
-
-
-    //         }
-    //     })
