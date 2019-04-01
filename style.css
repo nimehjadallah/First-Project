@@ -1,15 +1,49 @@
-
-
-body {
-  height: 100%;
-  background-image: url("images/sunrisefield.jpg");
-  background-size: 100%;
-  background-position: center center; 
+body { 
+  background: url("images/sunriseflowers.jpg") no-repeat center center fixed; 
+  background-size: cover;
 }
 
 .fontStyle {
-  /* background-color: rgb(236, 141, 63); */
   font-family: "Viga", sans-serif;
 }
+
+.titleColor {
+  color: rgb(158, 80, 158);
+}
+
+.textShadow {
+  text-shadow: 1.5px 0px rgb(90, 43, 90);
+}
+
+.formBackColor {
+  background-color: rgb(255, 255, 231, 0.55);
+}
+
+#formHeader {
+  background-color:  rgb(255, 255, 231, 0.6);
+}
+
+.textColor {
+  color: rgb(6, 77, 136);
+}
+
+.formBorder {
+  border: .8px solid rgb(158, 80, 158, 0.7);
+}
+
+.submit {
+  background-color: white;
+}
+
+.cardTableHeader {
+  background-color:  rgb(237, 241, 252);
+}
+
+.mainContainer {
+  background-color: rgb(255, 255, 231, 0.4);
+  border: .8px solid rgb(158, 80, 158, 0.7);
+}
+
+
 
 
