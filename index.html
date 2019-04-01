@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <div class="row fontStyle" id="form">
+      <div class="row fontStyle" id="form" name="form">
         <div class="card mt-5 mx-auto formBorder formBackColor textColor">
           <div class="card-header text-center" id="formHeader">
             Enter your Username Here
@@ -71,7 +71,7 @@
                   <option>Iowa</option>
                   <option>Kansas</option>
                   <option>Kentucky</option>
-                  <option>Lousiana</option>
+                  <option>Louisiana</option>
                   <option>Maine</option>
                   <option>Maryland</option>
                   <option>Massachusetts</option>
@@ -99,9 +99,9 @@
                   <option>Texas</option>
                   <option>Utah</option>
                   <option>Vermont</option>
-                  <option>Virigina</option>
+                  <option>Virginia</option>
                   <option>Washington</option>
-                  <option>West Vringinia</option>
+                  <option>West Virginia</option>
                   <option>Wisconsis</option>
                   <option>Wyoming</option>
                 </select>
@@ -113,7 +113,7 @@
               </div>
             </div>
 
-            <div class="form-row">
+            <div class="form-row" id="interests" name="interests">
               <div class="form-group col-12">
                 <h5 class="pt-2">
                   Select your interests from the choices below
@@ -122,10 +122,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Music"
+                    name="music"
                     id="eventMusic"
-                    value="option1"
-                    checked/>
+                    value="music"
+                  />
                   <label class="form-check-label" for="Music">
                     Music
                   </label>
@@ -135,10 +135,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Film & Media"
+                    name="film-media"
                     id="eventFilmMedia"
-                    value="option2"
-                    checked/>
+                    value="film"
+                  />
                   <label class="form-check-label" for="Film & Media">
                     Film & Media
                   </label>
@@ -148,10 +148,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Sports & Fitness"
+                    name="sports-fitness"
                     id="eventSportsFitness"
-                    value="option3"
-                    checked/>
+                    value="sports"
+                  />
                   <label class="form-check-label" for="Sports & Fitness">
                     Sports & Fitness
                   </label>
@@ -161,10 +161,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Travel & Outdoor"
+                    name="travel-outdoor"
                     id="eventTravelOutdoor"
-                    value="option4"
-                    checked />
+                    value="outdoor"
+                  />
                   <label class="form-check-label" for="Travel & Outdoor">
                     Travel & Outdoor
                   </label>
@@ -174,10 +174,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Food & Drink"
+                    name="food-drink"
                     id="eventFoodDrink"
-                    value="option5"
-                    checked/>
+                    value="food"
+                  />
                   <label class="form-check-label" for="Food & Drink">
                     Food & Drink
                   </label>
@@ -187,10 +187,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Charity & Causes"
+                    name="charity-causes"
                     id="eventCharityCauses"
-                    value="option6"
-                    checked/>
+                    value="charity"
+                  />
                   <label class="form-check-label" for="Charity & Causes">
                     Charity & Causes
                   </label>
@@ -252,16 +252,17 @@
               <table
                 class="table table-md table-hover table-striped"
                 id="event">
+                <thead class="textColor">
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">URL</th>
+                  </tr>
+                </thead>
                 <tbody>
-                  <thead class="textColor">
-                    <tr>
-                      <th scope="col">Event</th>
-                      <th scope="col">Location</th>
-                      <th scope="col">Time</th>
-                      <th scope="col">Cost</th>
-                      <th scope="col">URL</th>
-                    </tr>
-                  </thead>
+
                 </tbody>
               </table>
             </div>
@@ -271,8 +272,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="firebase.js"></script> -->
     <script src="mainJavascript.js"></script>
   </body>
 </html>
