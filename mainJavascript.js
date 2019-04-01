@@ -11,10 +11,10 @@ $(document).ready(function(){
         $("#personalizedMessage").show();
         $("#form").hide();
         $(".mainContainer").show();
-    
-        
+ 
+ 
         // console.log("hello");
-
+ 
     });
-
-});
+ 
+ });
