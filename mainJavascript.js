@@ -115,7 +115,11 @@ $(document).ready(function(){
             $("#precipitation").html("Forecast: " + description);
             $("#location").html(location);
         });
+ 
+ 
+        // console.log("hello");
+ 
 
     });
-
-});
+ 
+ });
