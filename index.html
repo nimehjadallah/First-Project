@@ -16,9 +16,10 @@
       href="https://fonts.googleapis.com/css?family=Viga"
       rel="stylesheet"
     />
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
-  
+
   <body>
     <div class="container">
       <div class="row fontStyle header">
@@ -31,7 +32,7 @@
       </div>
 
       <div class="row fontStyle" id="form" name="form">
-        <div class="card mt-5 mx-auto formBorder formBackColor textColor">
+        <div class="card mt-5 mx-auto formBorder backgroundYellow textColor">
           <div class="card-header text-center" id="formHeader">
             Enter your Username Here
           </div>
@@ -43,7 +44,8 @@
                   type="name"
                   class="form-control"
                   id="nameInput"
-                  placeholder="Name"/>
+                  placeholder=""
+                />
               </div>
             </div>
 
@@ -210,49 +212,72 @@
 
     <div class="container mainContainer mt-4">
       <div
-        class="row textColor fontStyle text-center mt-3 mb-5 py-3"
+        class="row fontStyle text-center textColor"
         id="inspirationSection">
         <div class="col-12">
-          <div>
-            <span id="quote">"Sushine and Sparkles make the world turn"</span>
+          <div class="card mb-4 textcolor backgroundYellow formBorder">
+            
+              <div class="card-header text-center">
+                The Daily Inspiration
+              </div>
+              <div class="card-body">
+              <div>
+                <span id="quote"
+                  >"Trust in yourself and what you can do! You are amaizing!"</span
+                >
+              </div>
+            </div>
           </div>
         </div>
       
       <div class="row fontStyle text-center textColor mb-5">
-        <div
-          class="col-md-5 col-12"
-          id="weatherSection">
-          <div id="weather">
-            <p id="icon">Weather icon goes here</p>
-            <p id="degrees">Degrees</p>
-            <p id="precipitation">Precipitation</p>
-            <p id="location">Location</p>
+        <div class="col-md-6 col-12 weatherSection">
+          <div class="card mb-4 textcolor backgroundYellow formBorder">
+            <div class="card-header text-center">
+              The Daily Window Check
+            </div>
+            <div class="card-body">
+              <div class="weather">
+                <p id="icon">Weather icon goes here</p>
+                <p id="degrees">Degrees</p>
+                <p id="precipitation">Precipitation</p>
+                <p id="location">Location</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="col-md-7 col-12"
-          id="jokeSection">
+        <div class="col-md-6 col-12" id="jokeSection">
           <div>
-            <h4>The Daily Funny</h4>
-            <br>
-            <span id="joke"
-              >"My wife told me to stop acting like a flamingo. So I put my foot
-              down."</span>
+            <div class="card mb-4 textcolor backgroundYellow formBorder">
+              <div class="card-header text-center">
+                The Daily Funny
+              </div>
+              <div class="card-body">
+                <p>
+                  <br />
+                  <span id="joke"
+                    >"My wife told me to stop acting like a flamingo. So I put
+                    my foot down."</span
+                  >
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
       <div class="row fontStyle">
         <div class="col-12" id="eventSection">
-          <div class="card mb-4 textColor">
-            <div class="card-header text-center cardTableHeader">
+          <div class="card mb-4 textColor formBorder" id="eventFormTable">
+            <div class="card-header text-center" >
               Events Today in Your Area
             </div>
             <div class="card-body">
               <table
                 class="table table-md table-hover table-striped"
-                id="event">
-                <thead class="textColor">
+                id="event"
+              >
+                <thead class="textColor tableText">
                   <tr>
                     <th scope="col">Event</th>
                     <th scope="col">Location</th>

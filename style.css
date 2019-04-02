@@ -35,14 +35,42 @@ body {
   background-color: white;
 }
 
-.cardTableHeader {
-  background-color:  rgb(237, 241, 252);
+.card-header {
+  background-color:  rgb(255, 255, 231, 0.8);
+  font-size: 18px;
 }
 
-.mainContainer {
-  background-color: rgb(255, 255, 231, 0.4);
-  border: .8px solid rgb(158, 80, 158, 0.7);
+#quote  {
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
 }
+
+#joke {
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.weather {
+  font-size: 20px;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+#degrees {
+  font-size: 30px;
+}
+
+.backgroundYellow {
+  background-color: rgb(255, 255, 231, 0.7);
+}
+
+#eventFormTable {
+  background-color: rgb(232, 234, 247, .8);
+}
+
+.tableText {
+  font-size: 18px;
+}
+
 
 
 
