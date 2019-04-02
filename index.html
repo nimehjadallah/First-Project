@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>Daily Wheaties</title>
     <link
       rel="stylesheet"
@@ -15,8 +16,10 @@
       href="https://fonts.googleapis.com/css?family=Viga"
       rel="stylesheet"
     />
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
       <div class="row fontStyle header">
@@ -28,8 +31,8 @@
         </div>
       </div>
 
-      <div class="row fontStyle" id="form">
-        <div class="card mt-5 mx-auto formBorder formBackColor textColor">
+      <div class="row fontStyle" id="form" name="form">
+        <div class="card mt-5 mx-auto formBorder backgroundYellow textColor">
           <div class="card-header text-center" id="formHeader">
             Enter your Username Here
           </div>
@@ -41,7 +44,8 @@
                   type="name"
                   class="form-control"
                   id="nameInput"
-                  placeholder="Name"/>
+                  placeholder=""
+                />
               </div>
             </div>
 
@@ -71,7 +75,7 @@
                   <option>Iowa</option>
                   <option>Kansas</option>
                   <option>Kentucky</option>
-                  <option>Lousiana</option>
+                  <option>Louisiana</option>
                   <option>Maine</option>
                   <option>Maryland</option>
                   <option>Massachusetts</option>
@@ -99,9 +103,9 @@
                   <option>Texas</option>
                   <option>Utah</option>
                   <option>Vermont</option>
-                  <option>Virigina</option>
+                  <option>Virginia</option>
                   <option>Washington</option>
-                  <option>West Vringinia</option>
+                  <option>West Virginia</option>
                   <option>Wisconsis</option>
                   <option>Wyoming</option>
                 </select>
@@ -113,7 +117,7 @@
               </div>
             </div>
 
-            <div class="form-row">
+            <div class="form-row" id="interests" name="interests">
               <div class="form-group col-12">
                 <h5 class="pt-2">
                   Select your interests from the choices below
@@ -122,10 +126,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Music"
+                    name="music"
                     id="eventMusic"
-                    value="option1"
-                    checked/>
+                    value="music"
+                  />
                   <label class="form-check-label" for="Music">
                     Music
                   </label>
@@ -135,10 +139,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Film & Media"
+                    name="film-media"
                     id="eventFilmMedia"
-                    value="option2"
-                    checked/>
+                    value="film"
+                  />
                   <label class="form-check-label" for="Film & Media">
                     Film & Media
                   </label>
@@ -148,10 +152,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Sports & Fitness"
+                    name="sports-fitness"
                     id="eventSportsFitness"
-                    value="option3"
-                    checked/>
+                    value="sports"
+                  />
                   <label class="form-check-label" for="Sports & Fitness">
                     Sports & Fitness
                   </label>
@@ -161,10 +165,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Travel & Outdoor"
+                    name="travel-outdoor"
                     id="eventTravelOutdoor"
-                    value="option4"
-                    checked />
+                    value="outdoor"
+                  />
                   <label class="form-check-label" for="Travel & Outdoor">
                     Travel & Outdoor
                   </label>
@@ -174,10 +178,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Food & Drink"
+                    name="food-drink"
                     id="eventFoodDrink"
-                    value="option5"
-                    checked/>
+                    value="food"
+                  />
                   <label class="form-check-label" for="Food & Drink">
                     Food & Drink
                   </label>
@@ -187,10 +191,10 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="Charity & Causes"
+                    name="charity-causes"
                     id="eventCharityCauses"
-                    value="option6"
-                    checked/>
+                    value="charity"
+                  />
                   <label class="form-check-label" for="Charity & Causes">
                     Charity & Causes
                   </label>
@@ -208,61 +212,83 @@
 
     <div class="container mainContainer mt-4">
       <div
-        class="row textColor fontStyle text-center mt-3 mb-5 py-3"
+        class="row fontStyle text-center textColor"
         id="inspirationSection">
         <div class="col-12">
-          <div>
-            <span id="quote">"Sushine and Sparkles make the world turn"</span>
+          <div class="card mb-4 textcolor backgroundYellow formBorder">
+            
+              <div class="card-header text-center">
+                The Daily Inspiration
+              </div>
+              <div class="card-body">
+              <div>
+                <span id="quote"
+                  >"Trust in yourself and what you can do! You are amaizing!"</span
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row fontStyle text-center textColor mb-5">
-        <div
-          class="col-md-5 col-12"
-          id="weatherSection">
-          <div id="weather">
-            <p id="icon">Weather icon goes here</p>
-            <p id="degrees">Degrees</p>
-            <p id="precipitation">Precipitation</p>
-            <p id="location">Location</p>
+        <div class="col-md-6 col-12 weatherSection">
+          <div class="card mb-4 textcolor backgroundYellow formBorder">
+            <div class="card-header text-center">
+              The Daily Window Check
+            </div>
+            <div class="card-body">
+              <div class="weather">
+                <p id="icon">Weather icon goes here</p>
+                <p id="degrees">Degrees</p>
+                <p id="precipitation">Precipitation</p>
+                <p id="location">Location</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          class="col-md-7 col-12"
-          id="jokeSection">
+        <div class="col-md-6 col-12" id="jokeSection">
           <div>
-            <h4>The Daily Funny</h4>
-            <br>
-            <span id="joke"
-              >"My wife told me to stop acting like a flamingo. So I put my foot
-              down."</span>
+            <div class="card mb-4 textcolor backgroundYellow formBorder">
+              <div class="card-header text-center">
+                The Daily Funny
+              </div>
+              <div class="card-body">
+                <p>
+                  <br />
+                  <span id="joke"
+                    >"My wife told me to stop acting like a flamingo. So I put
+                    my foot down."</span
+                  >
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="row fontStyle">
         <div class="col-12" id="eventSection">
-          <div class="card mb-4 textColor">
-            <div class="card-header text-center cardTableHeader">
+          <div class="card mb-4 textColor formBorder" id="eventFormTable">
+            <div class="card-header text-center" >
               Events Today in Your Area
             </div>
             <div class="card-body">
               <table
                 class="table table-md table-hover table-striped"
-                id="event">
-                <tbody>
-                  <thead class="textColor">
-                    <tr>
-                      <th scope="col">Event</th>
-                      <th scope="col">Location</th>
-                      <th scope="col">Time</th>
-                      <th scope="col">Cost</th>
-                      <th scope="col">URL</th>
-                    </tr>
-                  </thead>
-                </tbody>
+                id="event"
+              >
+                <thead class="textColor tableText">
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">URL</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
               </table>
             </div>
           </div>
