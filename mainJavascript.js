@@ -5,13 +5,13 @@ $(document).ready(function(){
     $("#form").show();
 
     var i = 0;
+    var n = 0;
     var jokesArray = [];
-    var dailyJoke = "";
     var userName = "";
     var userInterest = "";
     var city = "";
-    var state = "";
-    var zip = "";
+    var state = "virginia";
+    //var zip = "";
     var country = "us"
     var mileRadius = 10;
     var price = "free";
@@ -28,43 +28,53 @@ $(document).ready(function(){
 
         userName = $("#nameInput").val().trim();
         console.log(userName);
-        city = $("#inputCity").val().trim().toLowerCase();
+        city = $("#city").val().trim().toLowerCase();
         console.log(city);
-        state = $("#inputState").val().trim().toLowerCase();
-        console.log(state);
-        zip = $("#inputZip").val().trim();
-        console.log(zip);
+        //state = $("#inputState").val().trim().toLowerCase();
+        //console.log(state);
+        //zip = $("#inputZip").val().trim();
+        //console.log(zip);
+        $("#userName").append(userName);
 
-        /*
-        var music = document.form.interests.music.value;
-        var filmMedia = document.form.interests.film-media.value;
-        var sportsFitness = document.form.interests.sports-fitness.value;
-        var travelOutdoor = document.form.interests.travel-outdoor.value;
-        var foodDrink = document.form.interests.food-drink.value;
-        var charityCauses = document.form.interests.charity-causes.value;
+        var userInterest = [];
+            $.each($("input[name='interest']:checked"), function(){            
+                userInterest.push($(this).val());
+            });
+            console.log("My hobbies are: " + userInterest.join(", "));
+            console.log(userInterest);
+            if (userInterest[0] == "music") {
+                userInterest = "music";
+            } else if (userInterest[0] == "film") {
+                userInterest = "film";
+            } else if (userInterest[0] == "sports") {
+                userInterest = "sports";
+            } else if (userInterest[0] == "outdoor") {
+                userInterest = "outdoor";
+            } else if (userInterest[0] == "food") {
+                userInterest = "food";
+            } else if (userInterest[0] == "charity") {
+                userInterest = "charity";
+            } else {
+                userInterest = "";
+            }
 
-        if (music == "music") {
-            userInterest += "music";
-        }
-        if (filmMedia == "film") {
-            userInterest += "film";
-        }	
-        if (sportsFitness == "sports") {
-            userInterest += "sports";
-        }
-        if (travelOutdoor == "outdoor") {
-            userInterest += "outdoor";
-        }
-        if (foodDrink == "food") {
-            userInterest += "food";
-        }
-        if (charityCauses == "charity") {
-            userInterest += "charity";
-        }
+            console.log(userInterest);
 
-        console.log(userInterest);
-        */
+        getEvent(userInterest, city, state, mileRadius, price, date);
 
+        getJoke();
+
+        getQuote();
+
+        getWeather(city, country);
+
+    });
+
+    $("#getTomorrowData").on("click", function () {
+        getEvent(userInterest, city, state, mileRadius, price, "tomorrow");
+    });
+
+    function getEvent(userInterest, city, state, mileRadius, price, date) {
         var queryURLEvents = "https://www.eventbriteapi.com/v3/events/search/?q=" + userInterest + "&location.address=" + city + "-" + state + "&location.within=" + mileRadius + "mi" + "&price=" + price + "&start_date.keyword=" + date + "&token=S25ZGI2VFEV2V6GIKGSW";
         $.ajax({
             url: queryURLEvents,
@@ -72,15 +82,32 @@ $(document).ready(function(){
         }).then(function(response) {
             console.log(response);
             var events = response.events;
-            for(i = 0; i < events.length; i++) {
-            var eventName = events[i].name.text;
-            var eventURL = events[i].url;
-            var eventTime = events[i].start.local;
-            var eventStart = eventTime.slice(11, 16);
-            $("#event>tbody").append("<tr><td>" + eventName + "</td><td>" + "Richmond, VA" + "</td><td>" + eventStart + "</td><td>" + "Free" + "</td><td>" + eventURL + "</td></tr>");
-            }
-        });
 
+            for(i = 0; i < events.length; i++, n++) {
+                var eventName = events[i].name.text;
+                var eventURL = events[i].url;
+                var eventTime = events[i].start.local;
+                var eventStart = eventTime.slice(11, 16);
+                var venueID = events[i].venue_id;
+                
+                getLocation(venueID, eventName, eventStart, eventURL);                
+            };
+        });
+    }
+
+    function getLocation(venueID, eventName, eventStart, eventURL) {
+        var queryURLEventLocation = "https://www.eventbriteapi.com/v3/venues/" + venueID + "/?token=S25ZGI2VFEV2V6GIKGSW";
+
+        $.ajax({
+            url: queryURLEventLocation,
+            method: "GET"
+        }).then(function(response) {
+            var address = response.address.address_1;
+            $("#event>tbody").append("<tr><td>" + eventName + "</td><td>" + address + "</td><td>" + eventStart + "</td><td>" + "Free" + "</td><td><a href=" + eventURL + " target='_blank'>" + eventURL + "</a></td></tr>");
+        });
+    }
+
+    function getJoke() {
         var queryURLJoke = "https://icanhazdadjoke.com/search"
         $.ajax({
             headers: { 
@@ -91,13 +118,27 @@ $(document).ready(function(){
         }).then(function(response) {
             var jokes = response.results;
             for (var i = 0; i < jokes.length; i++) {
-            jokesArray.push(response.results[i].joke);
-        }
-            dailyJoke = jokesArray[Math.floor(Math.random() * jokesArray.length)];
-            console.log("Daily Joke: " + dailyJoke);
+                jokesArray.push(response.results[i].joke);
+            }
+            var dailyJoke = jokesArray[Math.floor(Math.random() * jokesArray.length)];
             $("#joke").html(dailyJoke);
         });
+    }
 
+    function getQuote() {
+        var queryURLQuote = "http://quotes.rest/qod.json";
+        $.ajax({
+            url: queryURLQuote,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            var dailyQuote = response.contents.quotes[0].quote;
+            var quoteAuthor = response.contents.quotes[0].author;
+            $("#quote").html("<h5>" + dailyQuote + "</h5><p>" + quoteAuthor + "</p>");
+        });
+    }
+    
+    function getWeather(city, country) {
         var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&units=imperial&appid=" + weatherAPIKey;
 
         $.ajax({
@@ -106,20 +147,15 @@ $(document).ready(function(){
         }).then(function(response) {
             console.log(response);
             var degrees = Math.floor(response.main.temp);
-            console.log("Temperature: " + degrees);
             var description = response.weather[0].description;
-            console.log("Forecast: " + description);
             var location = response.name;
-            console.log("Location: " + location);
+            var iconCode = response.weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+            $("#icon").html("<img src='" + iconURL  + "'>");
+            //$(".icon").html("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png' alt='Weather Icon'>");
             $("#degrees").html(degrees + " &deg");
             $("#precipitation").html("Forecast: " + description);
             $("#location").html(location);
         });
- 
- 
-        // console.log("hello");
- 
-
-    });
- 
- });
+    }
+});
