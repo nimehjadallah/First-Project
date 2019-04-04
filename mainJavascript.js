@@ -18,25 +18,13 @@ $(document).ready(function(){
     var date = "today"
     var weatherAPIKey = "166a433c57516f51dfab1f7edaed8413";
 
-<<<<<<< HEAD
-=======
     $("#submit").on("click", function (){
         event.preventDefault();
 
->>>>>>> b344258870fcb83f049167570697a8807fef7530
         $(".header").show();
         $("#personalizedMessage").show();
         $("#form").hide();
         $(".mainContainer").show();
-<<<<<<< HEAD
-    
-        
-        // console.log("hello");
-
-    });
-
-});
-=======
 
         userName = $("#nameInput").val().trim();
         console.log(userName);
@@ -135,4 +123,3 @@ $(document).ready(function(){
     });
  
  });
->>>>>>> b344258870fcb83f049167570697a8807fef7530
