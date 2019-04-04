@@ -16,17 +16,27 @@
       href="https://fonts.googleapis.com/css?family=Viga"
       rel="stylesheet"
     />
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous">
+    </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1/dist/cdn/placesAutocompleteDataset.min.js"></script>
   </head>
 
   <body>
     <div class="container">
-      <div class= "wrapper"></div>
-      <div class="row">
-        <div class="col-12 mt-5 text-center text-white">
+      <div class="row fontStyle header">
+        <div class="col-12 mt-5 text-center titleColor textShadow">
           <h1 class="display-4">Your Morning Wheaties!!</h1>
-          <h3>C'mon and have a bowl <span id="userName"> Name </span></h3>
+          <h3 id="personalizedMessage">
+            C'mon and have a bowl <span id="userName"> </span>
+          </h3>
         </div>
       </div>
 
@@ -45,75 +55,14 @@
                   id="nameInput"
                   placeholder=""
                 />
-              </div>
-            </div>
-          </div>
 
-            <div class="form-row">
-              <div class="form-group col-12 col-md-6">
                 <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity" />
-              </div>
-              <div class="form-group col-12 col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-                  <option selected>Choose...</option>
-                  <option>Alabama</option>
-                  <option>Alaska</option>
-                  <option>Arizona</option>
-                  <option>Arkansas</option>
-                  <option>California</option>
-                  <option>Colorado</option>
-                  <option>Connecticut</option>
-                  <option>Delaware</option>
-                  <option>Florida</option>
-                  <option>Georgia</option>
-                  <option>Hawaii</option>
-                  <option>Idaho</option>
-                  <option>Illinois</option>
-                  <option>Indiana</option>
-                  <option>Iowa</option>
-                  <option>Kansas</option>
-                  <option>Kentucky</option>
-                  <option>Louisiana</option>
-                  <option>Maine</option>
-                  <option>Maryland</option>
-                  <option>Massachusetts</option>
-                  <option>Michigan</option>
-                  <option>Minnesota</option>
-                  <option>Mississippi</option>
-                  <option>Missouri</option>
-                  <option>Montana</option>
-                  <option>Nebraska</option>
-                  <option>Nevada</option>
-                  <option>New Hampshire</option>
-                  <option>New Jersey</option>
-                  <option>New Mexico</option>
-                  <option>New York</option>
-                  <option>North Carolina</option>
-                  <option>North Dakota</option>
-                  <option>Ohio</option>
-                  <option>Oklahoma</option>
-                  <option>Oregon</option>
-                  <option>Pennsylvania</option>
-                  <option>Rhode Island</option>
-                  <option>South Carolina</option>
-                  <option>South Dakota</option>
-                  <option>Tennessee</option>
-                  <option>Texas</option>
-                  <option>Utah</option>
-                  <option>Vermont</option>
-                  <option>Virginia</option>
-                  <option>Washington</option>
-                  <option>West Virginia</option>
-                  <option>Wisconsis</option>
-                  <option>Wyoming</option>
-                </select>
-              </div>
-
-              <div class="form-group col-12 col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip" />
+              <input 
+                type="search"
+                id="city"
+                class="form-control"
+                placeholder="In which city do you live?" 
+                />
               </div>
             </div>
 
@@ -126,7 +75,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="music"
+                    name="interest"
                     id="eventMusic"
                     value="music"
                   />
@@ -139,7 +88,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="film-media"
+                    name="interest"
                     id="eventFilmMedia"
                     value="film"
                   />
@@ -152,7 +101,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="sports-fitness"
+                    name="interest"
                     id="eventSportsFitness"
                     value="sports"
                   />
@@ -160,12 +109,12 @@
                     Sports & Fitness
                   </label>
                 </div>
-                <br />
+                
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="travel-outdoor"
+                    name="interest"
                     id="eventTravelOutdoor"
                     value="outdoor"
                   />
@@ -178,7 +127,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="food-drink"
+                    name="interest"
                     id="eventFoodDrink"
                     value="food"
                   />
@@ -191,7 +140,7 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="charity-causes"
+                    name="interest"
                     id="eventCharityCauses"
                     value="charity"
                   />
@@ -201,12 +150,12 @@
                 </div>
               </div>
             </div>
-          </div>
 
-          <button type="submit" class="btn btn-primary" id="submit">
-            Submit
-          </button>
-        </form>
+            <button type="submit" class="btn textColor submit" id="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
     </div>
 
@@ -216,20 +165,20 @@
         id="inspirationSection">
         <div class="col-12">
           <div class="card mb-4 textcolor backgroundYellow formBorder">
-            
+            <div>
               <div class="card-header text-center">
                 The Daily Inspiration
               </div>
               <div class="card-body">
-              <div>
-                <span id="quote"
-                  >"Trust in yourself and what you can do! You are amaizing!"</span
-                >
-              </div>
+                <div>
+                  <span id="quote">
+                  "Trust in yourself and what you can do! You are amazing!"
+                  </span>
+                </div>
             </div>
           </div>
         </div>
-      
+      </div>
       <div class="row fontStyle text-center textColor mb-5">
         <div class="col-md-6 col-12 weatherSection">
           <div class="card mb-4 textcolor backgroundYellow formBorder">
@@ -261,10 +210,12 @@
                     my foot down."</span
                   >
                 </p>
+                
               </div>
             </div>
           </div>
         </div>
+      </div>
 
       <div class="row fontStyle">
         <div class="col-12" id="eventSection">
@@ -275,8 +226,7 @@
             <div class="card-body">
               <table
                 class="table table-md table-hover table-striped"
-                id="event"
-              >
+                id="event">
                 <thead class="textColor tableText">
                   <tr>
                     <th scope="col">Event</th>
@@ -290,16 +240,19 @@
 
                 </tbody>
               </table>
+              <button type="submit" class="btn textColor submit" id="getTomorrowData">
+                See tomorrow's events
+              </button>
             </div>
           </div>
         </div>
       </div>
-        </div>
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script> -->
+    <!---<script src="firebase.js"></script>-->
     <script src="mainJavascript.js"></script>
-
+    <script src="javascript.js"></script>
   </body>
 </html>
