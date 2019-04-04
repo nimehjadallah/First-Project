@@ -87,7 +87,17 @@ $(document).ready(function(){
                 var eventName = events[i].name.text;
                 var eventURL = events[i].url;
                 var eventTime = events[i].start.local;
-                var eventStart = eventTime.slice(11, 16);
+                var startTime = eventTime.slice(11, 16);
+                var startHour = startTime.slice(0, 2);
+                console.log("Start Hour: " + startHour);
+                var startHourInt = parseInt(startHour);
+                console.log("Start Hour Int: " + startHourInt);
+                var startHourUSA = startHourInt - 12;
+                console.log("Start Hour USA: " + startHourUSA);
+                var startHourString = startHourUSA.toString();
+                console.log("Start Hour String: " + startHourString);
+                var eventStart = startHourString + startTime.slice(2, 5) + " PM";
+                console.log("Event Start: " + eventStart);
                 var venueID = events[i].venue_id;
                 
                 getLocation(venueID, eventName, eventStart, eventURL);                
@@ -97,13 +107,16 @@ $(document).ready(function(){
 
     function getLocation(venueID, eventName, eventStart, eventURL) {
         var queryURLEventLocation = "https://www.eventbriteapi.com/v3/venues/" + venueID + "/?token=S25ZGI2VFEV2V6GIKGSW";
-
         $.ajax({
             url: queryURLEventLocation,
             method: "GET"
         }).then(function(response) {
             var address = response.address.address_1;
+            if(address == null) {
+                $("#event>tbody").append("<tr><td>" + eventName + "</td><td>" + "Richmond, VA" + "</td><td>" + eventStart + "</td><td>" + "Free" + "</td><td><a href=" + eventURL + " target='_blank'>" + eventURL + "</a></td></tr>");
+            } else {
             $("#event>tbody").append("<tr><td>" + eventName + "</td><td>" + address + "</td><td>" + eventStart + "</td><td>" + "Free" + "</td><td><a href=" + eventURL + " target='_blank'>" + eventURL + "</a></td></tr>");
+            }
         });
     }
 
