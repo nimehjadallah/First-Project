@@ -16,14 +16,16 @@
       href="https://fonts.googleapis.com/css?family=Viga"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous">
-    </script>
-    
+      crossorigin="anonymous"
+    ></script>
 
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1/dist/cdn/placesAutocompleteDataset.min.js"></script>
@@ -57,11 +59,11 @@
                 />
 
                 <label for="inputCity">City</label>
-              <input 
-                type="search"
-                id="city"
-                class="form-control"
-                placeholder="In which city do you live?" 
+                <input
+                  type="search"
+                  id="city"
+                  class="form-control"
+                  placeholder="In which city do you live?"
                 />
               </div>
             </div>
@@ -109,7 +111,7 @@
                     Sports & Fitness
                   </label>
                 </div>
-                
+
                 <div class="form-check form-check-inline">
                   <input
                     class="form-check-input"
@@ -150,10 +152,11 @@
                 </div>
               </div>
             </div>
-            <div class= "form-group col-12 col-md-12">
-              <label class="check">Check this box to bypass re-entering your information
-              <input type="checkbox">
-              <span class="checkmark"></span>
+            <div class="form-group col-12 col-md-12">
+              <label class="check"
+                >Check this box to bypass re-entering your information
+                <input type="checkbox" />
+                <span class="checkmark"></span>
               </label>
             </div>
 
@@ -166,9 +169,7 @@
     </div>
 
     <div class="container mainContainer mt-4">
-      <div
-        class="row fontStyle text-center textColor"
-        id="inspirationSection">
+      <div class="row fontStyle text-center textColor" id="inspirationSection">
         <div class="col-12">
           <div class="card mb-4 textcolor backgroundYellow formBorder">
             <div>
@@ -178,7 +179,7 @@
               <div class="card-body">
                 <div>
                   <span id="quote">
-                  "Trust in yourself and what you can do! You are amazing!"
+                    "Trust in yourself and what you can do! You are amazing!"
                   </span>
                 </div>
               </div>
@@ -209,13 +210,15 @@
               <div class="card-header text-center">
                 The Daily Funny
               </div>
-              <div class="card-body">
+              <div class="card-body" id= "size">
                 <p>
-                  <br />
                   <span id="joke"
                     >"My wife told me to stop acting like a flamingo. So I put
                     my foot down."
                   </span>
+                </p>
+                <p>
+                  <span> </span>
                 </p>
               </div>
             </div>
@@ -226,13 +229,14 @@
       <div class="row fontStyle">
         <div class="col-12" id="eventSection">
           <div class="card mb-4 textColor formBorder" id="eventFormTable">
-            <div class="card-header text-center" >
+            <div class="card-header text-center">
               Events Today in Your Area
             </div>
             <div class="card-body">
               <table
                 class="table table-md table-hover table-striped"
-                id="event">
+                id="event"
+              >
                 <thead class="textColor tableText">
                   <tr>
                     <th scope="col">Event</th>
@@ -242,11 +246,13 @@
                     <th scope="col">URL</th>
                   </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                <tbody></tbody>
               </table>
-              <button type="submit" class="btn textColor submit" id="getTomorrowData">
+              <button
+                type="submit"
+                class="btn textColor submit"
+                id="getTomorrowData"
+              >
                 See tomorrow's events
               </button>
             </div>
@@ -254,7 +260,7 @@
         </div>
       </div>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script> -->
     <!---<script src="firebase.js"></script>-->

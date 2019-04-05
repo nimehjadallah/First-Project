@@ -48,11 +48,15 @@ body {
 #joke {
   font-size: 20px;
   font-family: 'Indie Flower', cursive;
+  height: 100%;
+  
+
 }
 
 .weather {
   font-size: 20px;
   font-family: 'Libre Franklin', sans-serif;
+  
 }
 
 #degrees {
@@ -79,6 +83,14 @@ body {
   color: rgb(0, 38, 255);
   
 }
+
+#size {
+  height: 240px;
+}
+
+
+
+
 
 
 
