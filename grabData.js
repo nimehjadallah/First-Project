@@ -34,7 +34,7 @@ var mainApp = {};
         } else {
             //redirects to login-page
 
-            window.location.replace("login.html"); //takes you back to login page
+            window.location.replace("index.html"); //takes you back to login page
         }
     });
 
