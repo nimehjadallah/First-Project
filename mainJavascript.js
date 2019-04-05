@@ -80,6 +80,7 @@ $(document).ready(function(){
       .ref("users/" + uid)
       .update({
         userName: userName,
+        city: city,
         userInterest: userInterest
       });
 
