@@ -17,9 +17,3 @@
   })();
 
 
-  // $(".check").on("click", function (){
-  //   event.preventDefault();
-
-  //   $(".mainContainer").hide();
-
-  // });
