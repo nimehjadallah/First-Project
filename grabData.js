@@ -24,9 +24,16 @@ var mainApp = {};
                 console.log(snap.val());
                 console.log(snap.val().email);
                 console.log(snap.val().userName);
+                console.log(snap.val().city);
+
+                var checked = localStorage.getItem('check');
+                if (checked == "true" + snap.val().userName) {
+                    $("#form").hide();
+                }
 
                 $("#email").text(snap.val().email);
                 $("#userName").text(snap.val().userName);
+                $("#city").text(snap.val().city);
                 $("#interest").text(snap.val().userInterest);
 
             });
