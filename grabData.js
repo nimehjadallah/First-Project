@@ -24,10 +24,12 @@ var mainApp = {};
                 console.log(snap.val());
                 console.log(snap.val().email);
                 console.log(snap.val().userName);
+                console.log(snap.val().city);
 
                 $("#email").text(snap.val().email);
                 $("#userName").text(snap.val().userName);
                 $("#interest").text(snap.val().userInterest);
+                $("#city").text(snap.val().city);
 
             });
 

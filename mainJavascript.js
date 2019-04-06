@@ -1,10 +1,5 @@
 $(document).ready(function(){
-  // $(".mainContainer").hide();
-  // $("#personalizedMessage").hide();
-  // $(".header").show();
-  // $("#form").show();
   var firebase = app_fireBase;
-  //var mainApp = {};
   var i = 0;
   var jokesArray = [];
   var userName;

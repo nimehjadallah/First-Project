@@ -50,6 +50,10 @@ body {
   font-family: 'Indie Flower', cursive;
 }
 
+#size {
+  height: 240px;
+}
+
 .weather {
   font-size: 20px;
   font-family: 'Libre Franklin', sans-serif;
