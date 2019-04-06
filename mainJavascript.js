@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     var userSnap = firebase.database().ref("users/" + userId);
     userSnap.on("value", function(snap) {
-      console.log(snap.val());
+     // console.log(snap.val());
       //console.log(snap.val().userName);
     });
   });
@@ -51,12 +51,10 @@ $(document).ready(function(){
     }
 
     userName = $("#nameInput").val();
-
-    console.log(userName);
-    
+    //console.log(userName);
     city = $("#city").val().trim().toLowerCase();
-
-    console.log(city);
+    //console.log(city);
+    
     var userInterest = [];
     $.each($("input[name='interest']:checked"), function() {
       userInterest.push($(this).val());
