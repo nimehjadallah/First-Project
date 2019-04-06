@@ -31,22 +31,32 @@ $(document).ready(function(){
     var userSnap = firebase.database().ref("users/" + userId);
     userSnap.on("value", function(snap) {
       console.log(snap.val());
-      console.log(snap.val().userName);
+      //console.log(snap.val().userName);
     });
   });
+
+  var checked = localStorage.getItem('check');
+  if (checked == "true" + userName) {
+    $("#form").hide();
+  }
 
   $("#submit").on("click", function() {
     event.preventDefault();
 
-    //add if/else for check box here
-    $(".header").show();
-    $("#personalizedMessage").show();
-    $("#form").hide();
-    $(".mainContainer").show();
+    if (document.getElementById("check").checked) {
+      localStorage.setItem('check', JSON.stringify(true) + $("#nameInput").val());
+    }
+    else {
+      localStorage.setItem('check', JSON.stringify(false) + $("#nameInput").val());
+    }
 
     userName = $("#nameInput").val();
+
+    console.log(userName);
+    
     city = $("#city").val().trim().toLowerCase();
 
+    console.log(city);
     var userInterest = [];
     $.each($("input[name='interest']:checked"), function() {
       userInterest.push($(this).val());
@@ -90,47 +100,6 @@ $(document).ready(function(){
 
   });
 
-  // (function() {
-  //   firebase.auth().onAuthStateChanged(user => {
-  //     if (user) {
-  //       // User is signed in.
-  //       //uid = user.uid; //saved current user to variable
-  //       //console.log(uid);
-  //       this.userId = user.uid; // calling current user and saving key
-
-  //       //creates/updates the user in the database using info from Auth.
-  //       firebase
-  //         .database()
-  //         .ref("users/" + this.userId)
-  //         .update({
-  //           email: user.email
-  //         });
-
-  //       //sets up database info for current user
-  //       var userSnap = firebase.database().ref("users/" + user.uid);
-
-  //       userSnap.on("value", function(snap) {
-  //         console.log(snap.val());
-  //         console.log(snap.val().email);
-  //         console.log(snap.val().userName);
-
-  //         $("#email").text(snap.val().email);
-  //         $("#userName").text(snap.val().userName);
-  //         $("#interest").text(snap.val().userInterest);
-  //       });
-  //     } else {
-  //       //redirects to login-page
-
-  //       window.location.replace("login.html"); //takes you back to login page
-  //     }
-  //   });
-
-  //   function logOut() {
-  //     firebase.auth().signOut();
-  //   }
-
-  //   mainApp.logOut = logOut;
-  // })();
 
   $("#getTomorrowData").on("click", function () {
     var tableData = $("#event>tbody");
