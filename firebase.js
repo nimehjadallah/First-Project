@@ -16,46 +16,4 @@
     app_fireBase = firebase;
  
 
-  //var database = firebase.database();
 
-//   $("#submit").on("click", function(event) {
-//     event.preventDefault();
-//     var userName = $("#nameInput")
-//       .val()
-//       .trim();
-//     console.log(userName);
-//     var city = $("#inputCity")
-//       .val()
-//       .trim();
-//     console.log(city);
-//     var state = $("#inputState")
-//       .val()
-//       .trim();
-//     console.log(state);
-
-//     // var cityState = $("#areaInput").val().trim();
-//     // console.log(cityState);
-//     //   var month = moment($("#monthInput").val().trim(), "MM/DD/YYYY").format("X");
-
-//     var newUser = {
-//       name: userName,
-//       city: city,
-//       state: state
-//     };
-//     database.ref().push(newUser);
-//   });
-//   $("#nameInput").val("");
-//   $("#inputCity").val("");
-//   $("#inputState").val("");
-
-//   database.ref().on("value", function(snapshot) {
-//     var userName = snapshot.val().name;
-//     $("#nameInput").text(userName);
-
-//     var city = snapshot.val().city;
-//     $("#inputCity").text(city);
-
-//     var state = snapshot.val().state;
-//     $("#inputState").text(state);
-//   });
-//});
