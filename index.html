@@ -4,31 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
 
-    <title>Daily Wheaties</title>
+    
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link
+    <link 
       href="https://fonts.googleapis.com/css?family=Viga"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous">
-    </script>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1/dist/cdn/placesAutocompleteDataset.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Libre+Franklin|Pacifico"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-
   <body>
     <div class="container">
       <div class="row fontStyle header">
@@ -39,220 +38,21 @@
           </h3>
         </div>
       </div>
-
-      <div class="row fontStyle" id="form" name="form">
-        <div class="card mt-5 mx-auto formBorder backgroundYellow textColor">
-          <div class="card-header text-center" id="formHeader">
-            Enter your Username Here
-          </div>
-          <form class="px-3 py-3">
-            <div class="form-row">
-              <div class="form-group col-12 col-md-12">
-                <label for="nameInput">Username</label>
-                <input
-                  type="name"
-                  class="form-control"
-                  id="nameInput"
-                  placeholder=""
-                />
-
-                <label for="inputCity">City</label>
-              <input 
-                type="search"
-                id="city"
-                class="form-control"
-                placeholder="In which city do you live?" 
-                />
-              </div>
-            </div>
-
-            <div class="form-row" id="interests" name="interests">
-              <div class="form-group col-12">
-                <h5 class="pt-2">
-                  Select your interests from the choices below
-                </h5>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventMusic"
-                    value="music"
-                  />
-                  <label class="form-check-label" for="Music">
-                    Music
-                  </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventFilmMedia"
-                    value="film"
-                  />
-                  <label class="form-check-label" for="Film & Media">
-                    Film & Media
-                  </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventSportsFitness"
-                    value="sports"
-                  />
-                  <label class="form-check-label" for="Sports & Fitness">
-                    Sports & Fitness
-                  </label>
-                </div>
-                
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventTravelOutdoor"
-                    value="outdoor"
-                  />
-                  <label class="form-check-label" for="Travel & Outdoor">
-                    Travel & Outdoor
-                  </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventFoodDrink"
-                    value="food"
-                  />
-                  <label class="form-check-label" for="Food & Drink">
-                    Food & Drink
-                  </label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="interest"
-                    id="eventCharityCauses"
-                    value="charity"
-                  />
-                  <label class="form-check-label" for="Charity & Causes">
-                    Charity & Causes
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <button type="submit" class="btn textColor submit" id="submit">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="container mainContainer mt-4">
-      <div
-        class="row fontStyle text-center textColor"
-        id="inspirationSection">
+      <div class="row mt-5">
         <div class="col-12">
-          <div class="card mb-4 textcolor backgroundYellow formBorder">
-            <div>
-              <div class="card-header text-center">
-                The Daily Inspiration
-              </div>
-              <div class="card-body">
-                <div>
-                  <span id="quote">
-                  "Trust in yourself and what you can do! You are amazing!"
-                  </span>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row fontStyle text-center textColor mb-5">
-        <div class="col-md-6 col-12 weatherSection">
-          <div class="card mb-4 textcolor backgroundYellow formBorder">
-            <div class="card-header text-center">
-              The Daily Window Check
-            </div>
-            <div class="card-body">
-              <div class="weather">
-                <p id="icon">Weather icon goes here</p>
-                <p id="degrees">Degrees</p>
-                <p id="precipitation">Precipitation</p>
-                <p id="location">Location</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-12" id="jokeSection">
-          <div>
-            <div class="card mb-4 textcolor backgroundYellow formBorder">
-              <div class="card-header text-center">
-                The Daily Funny
-              </div>
-              <div class="card-body">
-                <p>
-                  <br />
-                  <span id="joke"
-                    >"My wife told me to stop acting like a flamingo. So I put
-                    my foot down."</span
-                  >
-                </p>
-                
-              </div>
-            </div>
-          </div>
+          <div id="firebaseui-auth-container"></div>
+          <div id="loader">Loading...</div>
         </div>
       </div>
 
-      <div class="row fontStyle">
-        <div class="col-12" id="eventSection">
-          <div class="card mb-4 textColor formBorder" id="eventFormTable">
-            <div class="card-header text-center" >
-              Events Today in Your Area
-            </div>
-            <div class="card-body">
-              <table
-                class="table table-md table-hover table-striped"
-                id="event">
-                <thead class="textColor tableText">
-                  <tr>
-                    <th scope="col">Event</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Cost</th>
-                    <th scope="col">URL</th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-              </table>
-              <button type="submit" class="btn textColor submit" id="getTomorrowData">
-                See tomorrow's events
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
-    
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script> -->
-    <!---<script src="firebase.js"></script>-->
-    <script src="mainJavascript.js"></script>
-    <script src="javascript.js"></script>
+    <script src="firebase.js"></script>
+    <script src="login.js"></script>
+    
   </body>
 </html>
